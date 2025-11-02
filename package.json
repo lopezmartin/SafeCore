@@ -1,0 +1,33 @@
+{
+  "name": "safecore",
+  "version": "1.0.0",
+  "description": "SafeCore is a runtime framework for probabilistic timed automata that validates model structure (Zod), enforces domain rules (probabilities, guards, resets) and embeds an integrated LTL/PCTL model checker. It verifies dynamically generated models in‑process, improving safety, traceability and early error detection.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --loader ts-node/esm src/index.ts",
+    "build": "tsc",
+    "serve": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lopezmartin/SafeCore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lopezmartin/SafeCore/issues"
+  },
+  "homepage": "https://github.com/lopezmartin/SafeCore#readme",
+  "dependencies": {
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.2",
+    "ts-node": "^10.9.2",
+    "typedoc": "^0.28.14",
+    "typescript": "^5.9.3"
+  }
+}

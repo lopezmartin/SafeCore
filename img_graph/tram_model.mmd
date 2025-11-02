@@ -1,0 +1,17 @@
+flowchart LR
+  nIdle(["Idle"]):::initial
+  nTramApproach("TramApproach")
+  nPedestrianAndTramApproach("PedestrianAndTramApproach")
+  nPedestrianCrossingNoTram("PedestrianCrossingNoTram")
+  nPedestrianCrossingTramApproach("PedestrianCrossingTramApproach")
+  nAccident(["Accident"]):::accident
+  nIdle -->|p=1| nTramApproach
+  nTramApproach -->|p=0.6| nPedestrianAndTramApproach
+  nTramApproach -->|p=0.39| nPedestrianCrossingTramApproach
+  nTramApproach -->|p=0.01| nAccident
+  nPedestrianAndTramApproach -->|p=0.7| nPedestrianCrossingNoTram
+  nPedestrianAndTramApproach -->|p=0.3| nPedestrianCrossingTramApproach
+  nPedestrianCrossingNoTram -->|p=1| nIdle
+  nPedestrianCrossingTramApproach -->|p=1| nIdle
+  classDef initial fill:#ffeeaa,stroke:#333,stroke-width:2px;
+  classDef accident fill:#ffcccc,stroke:#cc0000,stroke-width:2px,color:#800000;
